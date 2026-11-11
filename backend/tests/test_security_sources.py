@@ -58,7 +58,7 @@ def test_tokens():
     assert valid_job_id(jid)
     tok = job_token("secret", jid)
     assert verify_token("secret", jid, tok)
-    assert not verify_token("secret", jid, tok[:-1] + "0")
+    assert not verify_token("secret", jid, tok[:-1] + ("1" if tok[-1] == "0" else "0"))
     assert not verify_token("other", jid, tok)
     assert not verify_token("secret", jid, None)
     assert not valid_job_id("../etc/passwd")
