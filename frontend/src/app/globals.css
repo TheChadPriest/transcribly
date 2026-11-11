@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  color-scheme: light;
+  --bg: #fbfbfa;
+  --surface: #ffffff;
+  --surface-2: #f4f4f2;
+  --border: #e4e4e0;
+  --border-strong: #cfcfc9;
+  --text: #1c1d1f;
+  --text-muted: #5f6166;
+  --text-faint: #85878c;
+  --accent: #2d4fb3;
+  --accent-hover: #233f92;
+  --accent-contrast: #ffffff;
+  --accent-soft: #eef2fc;
+  --mark: #fdf1c4;
+  --highlight: #f4efe0;
+  --highlight-border: #c9a646;
+  --focus: #2d4fb3;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --success: #1f7a4a;
+  --warn: #8a5a00;
+  --warn-soft: #fbf3df;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111214;
+  --surface: #17181b;
+  --surface-2: #1e2024;
+  --border: #2b2d32;
+  --border-strong: #3a3d44;
+  --text: #e8e8e6;
+  --text-muted: #a3a5aa;
+  --text-faint: #7d8086;
+  --accent: #8ea8f5;
+  --accent-hover: #a9bdf8;
+  --accent-contrast: #0f1320;
+  --accent-soft: #1d2438;
+  --mark: #5a4a12;
+  --highlight: #2a2618;
+  --highlight-border: #b8963a;
+  --focus: #8ea8f5;
+  --danger: #f2877d;
+  --danger-soft: #3a1d1b;
+  --success: #6fcf97;
+  --warn: #e7b85a;
+  --warn-soft: #2f2716;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-success: var(--success);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: anywhere;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+mark {
+  background: var(--mark);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+mark.current {
+  outline: 2px solid var(--highlight-border);
+}
+
+.seg-hl {
+  background: var(--highlight);
+  box-shadow: inset 0 -1px 0 var(--highlight-border);
+  border-radius: 2px;
+}
+
+.seg-focus {
+  background: var(--accent-soft);
+  box-shadow: inset 0 -2px 0 var(--accent);
+  border-radius: 2px;
+}
+
+.seg-low {
+  text-decoration: underline dotted var(--text-faint);
+  text-underline-offset: 3px;
+}
+
+.flash {
+  animation: flash 1.6s ease-out;
+}
+
+@keyframes flash {
+  0% { background: var(--accent-soft); }
+  100% { background: transparent; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.4);
+}

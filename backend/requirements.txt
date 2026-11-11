@@ -1,0 +1,14 @@
+# Runtime dependencies (pinned versions in requirements.lock.txt)
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+pydantic-settings>=2.3
+python-multipart>=0.0.9
+faster-whisper>=1.1
+yt-dlp>=2025.1.1
+httpx>=0.27
+python-docx>=1.1
+reportlab>=4.2
+numpy>=1.26
+imageio-ffmpeg>=0.5  # bundled ffmpeg for machines without one on PATH (Docker uses the system ffmpeg)
+anthropic>=2.3  # only used when TRANSCRIBLY_AI_PROVIDER=claude
