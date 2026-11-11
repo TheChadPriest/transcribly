@@ -14,9 +14,9 @@ Everything runs on free, open-source software on your own computer. No paid acco
 
 ## Demo
 
-[![Watch the Transcribly demo (5 min)](docs/media/demo-thumbnail.jpg)](docs/media/transcribly-demo.mp4)
+[![Watch the Transcribly demo (5 min)](docs/media/demo-thumbnail.jpg)](https://github.com/TheChadPriest/transcribly/raw/main/docs/media/transcribly-demo.mp4)
 
-**[▶ Watch the 5-minute demo](docs/media/transcribly-demo.mp4)** — pasting a YouTube lecture, following the
+**[▶ Download the 5-minute demo video (10 MB, MP4)](https://github.com/TheChadPriest/transcribly/raw/main/docs/media/transcribly-demo.mp4)** — pasting a YouTube lecture, following the
 progress, reading the AI study notes, jumping from a note to the transcript passage it is based on, switching
 citation styles, and exporting.
 
